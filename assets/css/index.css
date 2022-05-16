@@ -72,6 +72,10 @@ article {
   margin-right: auto;
 }
 
+h1,h2,h3,h4,h5 {
+  margin-bottom: 0;
+}
+
 .post-content {
 	font-family: 'Merriweather', serif;
 	line-height: 1.5em;
@@ -242,18 +246,12 @@ article {
   margin-bottom: 50px;
 }
 
-.post-content p {
-  hyphens: auto;
-  line-height: 1.8;
-  /* text-align: justify; */
-  text-justify: ideographic;
-  margin-bottom: 1em;
-}
+
 
 .related-content {
   border-width: 3px;
   border-style: solid;
-  border-color: #000;
+  border-color: var(--fg);
   padding: 0 10px;
   margin-bottom: 50px;
   margin-top: 100px;
