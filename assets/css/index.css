@@ -1,4 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&display=swap');
+/*
+    font-family: 'Bree Serif', serif;
+    font-family: 'Fira Code', monospace;
+    font-family: 'Merriweather', serif;
+*/
+
 /* global */
+
+:root {
+  --punk: rgb(237, 6, 141);
+  --fg: black;
+  --bg: white;
+  --subtle: rgba(0, 0, 0, 0.15);
+  --radius: 0;
+}
 
 body {
   font-family: "Bree Serif", sans-serif;
@@ -6,34 +21,66 @@ body {
   margin: 0 20px;
 }
 
-article {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 a {
-  color: #000;
+  color: var(--fg);
   text-decoration: none;
 }
 
 a:hover {
-  font-weight: 600;
-  text-decoration: underline;
+  color: var(--punk);
+}
+
+.post-tags {
+  background-color: var(--subtle);
+}
+
+.post-tags a:hover {
+  color: var(--fg);
+}
+
+.post-tags:hover {
+  background-color: var(--punk);
+}
+.post-content a {
+  text-decoration-color: var(--punk);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
+.post-content a:hover {
+  background-color: var(--fg);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+code, kbd, pre, output {
+  font-family: 'Fira Code', monospace;
+}
+
+.cmd {
+  border: 1px solid var(--subtle);
+}
+
+.cmd code:before {
+  content: "$ ";
+}
+
+article {
+  margin: 0 20px;
+  max-width: 48em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content {
+	font-family: 'Merriweather', serif;
+	line-height: 1.5em;
+  -webkit-font-smoothing: antialiased;
+  text-align: justify;
 }
 
 .post-ads {
   margin: 50px 0;
-}
-
-.markdown-body {
-  font-size: 18px;
-  max-width: 100%;
-}
-
-.markdown-body a {
-  text-decoration: underline;
-  text-decoration-color: #000;
 }
 
 .markdown-body blockquote {
@@ -46,14 +93,14 @@ a:hover {
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 
 .markdown-body code {
   padding: 0.2em 0.4em;
   font-size: 85%;
-  background-color: #f6f8fa;
-  border-radius: 6px;
+  background-color: var(--subtle);
+  border-radius: var(--radius);
 }
 
 /* reset code */
