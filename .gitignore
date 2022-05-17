@@ -1,0 +1,5 @@
+*.log
+*.private
+private.*
+.DS_Store
+
