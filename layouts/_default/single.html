@@ -21,7 +21,7 @@
               {{ end }}
             </div>
             <div class="col-xs-6">
-              {{ if .Site.Author.name }}
+              {{ if .Site.Author.namex }}
               <div class="post-author">
                 <a target="_blank" href="{{ .Site.Author.homepage }}">@{{ .Site.Author.name }}</a>
               </div>
@@ -61,11 +61,14 @@
           {{ end }}
           <!-- split -->
           <div style="height: 50px;"></div>
+
+          
           {{ if .Site.Params.disqus }}
           <div class="post-comments">
-            {{ partial "disqus.html" . }}
+            
           </div>
           {{ end }}
+
         {{ end }}
 
         {{ partial "footer.html" . }}
@@ -77,6 +80,8 @@
   {{ if .Site.Params.extraBody }}
   {{ .Site.Params.extraBody | safeHTML }}
   {{ end }}
+
+  {{ partial "svg.html" }}
 
 </body>
 
