@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" prefix="og: http://ogp.me/ns#">
-{{ partial "head.html" . }}
-
-<body>
+{{ define "main" }}
 	<article class="posts">
 		<div class="row">
 			<div class="col-xs-12">
@@ -39,5 +35,4 @@
 			</div>
 		</div>
 	</article>
-</body>
-</html>
+{{ end }}

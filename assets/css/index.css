@@ -1,6 +1,15 @@
+:root {
+	--punk: rgb(203, 3, 248);
+	--foreground: rgb(0,0,0);
+	--bg: white;
+	--wash: #c7e2ff;
+	--accentuate: rgba(0,0,0,0.1);
+	--radius: 3px;
+}
+
 .post-content > p:first-of-type::first-letter {
-	font-size: 5rem;
-	line-height: 4rem;
+	font-size: 6.5rem;
+	line-height: 5rem;
 	float: left;
 	font-family: bungee shade, sans-serif;
 	padding: 0.25rem 0.5rem 0 0;
@@ -19,7 +28,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 .site-footer-item {
@@ -31,14 +40,7 @@
 	transform: scale(1.5);
 }
 
-:root {
-	--punk: rgb(203, 3, 248);
-	--foreground: rgb(0,0,0);
-	--bg: white;
-	--wash: #dee3eb;
-	--accentuate: rgba(0,0,0,0.1);
-	--radius: 3px;
-}
+
 
 pre.code, pre.cmd {
 	background-color: var(--wash);
@@ -94,13 +96,14 @@ a:hover, a.hovering {
 	margin: 1em 0;
 }
 
-input[type="text"] {
-	width: max-content;
+textarea {
+	height: 10em;
 }
 
-textarea {
-	width: 20em;
-	height: 10em;
+input[type="text"], textarea, select {
+	width: -webkit-fill-available;
+	width: -moz-available;
+	background-color: var(--accentuate);
 }
 
 table {
