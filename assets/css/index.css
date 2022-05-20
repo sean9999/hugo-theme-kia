@@ -47,6 +47,11 @@ pre.code, pre.cmd {
 	border: 1px solid var(--accentuate);
 }
 
+pre.code>code.json {
+	padding-bottom: 1em;
+	display: block;
+}
+
 body {
 	font-family: "Bree Serif", sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -201,7 +206,7 @@ h5 {
 	border-left: 0.25em solid #d0d7de;
 }
 
-.markdown-body pre {
+pre {
 	padding: 1em;
 	background-color: var(--wash);
 	border-radius: var(--radius);
