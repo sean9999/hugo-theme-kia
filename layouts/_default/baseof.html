@@ -43,8 +43,8 @@
 	<!--	css 	-->
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&family=Bungee+Shade&display=swap" rel="stylesheet" />
+	<link nonce="muthereffer" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" />
+	<link nonce="muthereffer" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&family=Bungee+Shade&display=swap" rel="stylesheet" />
 	{{ $styles := resources.Get "css/index.css" | minify }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen" />
 	<link rel="stylesheet" href="/fonts/fontawesome/css/all.css" />
@@ -59,7 +59,7 @@
 	<script defer src="{{ . | absURL }}"></script>
 	{{- end }}
 	
-	<script id="dsq-count-scr" src="//fukt.disqus.com/count.js" defer async></script>
+	<script id="dsq-count-scr" nonce="muthereffer" src="//fukt.disqus.com/count.js" defer async></script>
 	
 	<!--	page bundle assets	-->
 	{{ $stylesheets := .Resources.Match "*.css" }}
@@ -69,7 +69,7 @@
 	{{ with .Resources.GetMatch "*.js" }}
 	<script type="text/javascript" src="{{ .RelPermalink }}" async defer></script>
 	{{ end }}
-	<script type="module" src="/js/universal.mjs"></script>
+	<script type="module" nonce="muthereffer" src="/js/universal.mjs"></script>
 	{{ with .Resources.GetMatch "index.mjs" }}
 	<script type="module" src="{{ .RelPermalink }}"></script>
 	{{ end }}
