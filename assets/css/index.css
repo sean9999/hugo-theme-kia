@@ -202,7 +202,7 @@ h5 {
 }
 
 .markdown-body pre {
-	padding: 0 0 1em 0;
+	padding: 1em;
 	background-color: var(--wash);
 	border-radius: var(--radius);
 	border-width: 1px;
