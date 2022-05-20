@@ -4,7 +4,7 @@
 	--bg: white;
 	--wash: #c7e2ff;
 	--accentuate: rgba(0,0,0,0.1);
-	--radius: 3px;
+	--radius: 5px;
 }
 
 .post-content > p:first-of-type::first-letter {
@@ -202,25 +202,17 @@ h5 {
 }
 
 .markdown-body pre {
-	padding: 16px;
-	overflow: auto;
-	border-radius: var(--radius);
-}
-
-.markdown-body code {
-	padding: 0.2em 0.4em;
-	font-size: 85%;
+	padding: 0 0 1em 0;
 	background-color: var(--wash);
 	border-radius: var(--radius);
+	border-width: 1px;
+	overflow-x: auto;
 }
 
 /* reset code */
 
 .markdown-body pre>code {
-	padding: 0;
-	font-size: 100%;
-	background-color: inherit;
-	border: 0;
+	background-color: unset;
 }
 
 /* i18n */
