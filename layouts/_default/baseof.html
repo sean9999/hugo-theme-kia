@@ -40,6 +40,9 @@
 	{{ end }}
 	<link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 	
+	{{ $critical := resources.Get "css/crucial.css" | minify }}
+	<style nonce="muthereffer">{{ $critical.Content | safeCSS }}</style>
+
 	<!--	css 	-->
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -50,29 +53,31 @@
 	<link rel="stylesheet" href="/fonts/fontawesome/css/all.css" />
 	{{ if .Site.Params.TwitterCards }}{{ template "_internal/twitter_cards.html" . }}{{ end }}
 	{{ .Site.Params.extraHead | safeHTML }}
-	
+
+
 	<!--	external assets referenced in front matter  -->
 	{{ range .Params.assets.css -}}
-	<link rel="stylesheet" href="{{ . | absURL }}" />
+	<link nonce="muthereffer" rel="stylesheet" href="{{ . | absURL }}" />
 	{{- end }}
 	{{ range .Params.assets.js -}}
-	<script defer src="{{ . | absURL }}"></script>
+	<script nonce="muthereffer" defer src="{{ . | absURL }}"></script>
 	{{- end }}
-	
 	<script id="dsq-count-scr" nonce="muthereffer" src="//fukt.disqus.com/count.js" defer async></script>
 	
 	<!--	page bundle assets	-->
+	
 	{{ $stylesheets := .Resources.Match "*.css" }}
 	{{ range $stylesheets }}
-	<link rel="stylesheet" href="{{ .RelPermalink }}" />
+	<link nonce="muthereffer" rel="stylesheet" href="{{ .RelPermalink }}" />
 	{{ end }}
 	{{ with .Resources.GetMatch "*.js" }}
-	<script type="text/javascript" src="{{ .RelPermalink }}" async defer></script>
+	<script nonce="muthereffer" type="text/javascript" src="{{ .RelPermalink }}" async defer></script>
 	{{ end }}
 	<script type="module" nonce="muthereffer" src="/js/universal.mjs"></script>
 	{{ with .Resources.GetMatch "index.mjs" }}
-	<script type="module" src="{{ .RelPermalink }}"></script>
+	<script nonce="muthereffer" type="module" src="{{ .RelPermalink }}"></script>
 	{{ end }}
+	
 </head>
 
 <body>

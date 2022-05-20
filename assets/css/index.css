@@ -1,13 +1,46 @@
 :root {
 	--punk: rgb(203, 3, 248);
-	--foreground: rgb(0,0,0);
+	--foreground: rgb(0, 0, 0);
 	--bg: white;
 	--wash: #c7e2ff;
-	--accentuate: rgba(0,0,0,0.1);
+	--accentuate: rgba(0, 0, 0, 0.1);
 	--radius: 5px;
 }
 
-.post-content > p:first-of-type::first-letter {
+.post-content p,
+ul,
+ol {
+	font-family: Merryweather;
+	line-height: 1.5em;
+}
+
+table {
+	width: 100%;
+}
+
+nav.breadcrumb a:not(:last-child)::after {
+	content: "↠";
+	padding: 0 .5em;
+}
+
+h2,
+h3,
+h4,
+h5 {
+	margin-bottom: 0;
+	margin-top: 2em;
+}
+
+h1 {
+	margin: 1em 0 0;
+}
+
+.post-date {
+	font-weight: 800;
+	font-style: italic;
+}
+
+.post-content>p:first-of-type::first-letter {
 	font-size: 6.5rem;
 	line-height: 5rem;
 	float: left;
@@ -23,24 +56,15 @@
 	border-right: 1px solid var(--foreground);
 }
 
-.site-footer {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	padding-bottom: 1em;
-}
 
-.site-footer-item {
-	flex-grow: 0;
-	flex-shrink: 1;
-}
-
-.header-item a i:hover, .site-footer-item a i:hover, i.hovering {
+.header-item a i:hover,
+.site-footer-item a i:hover,
+i.hovering {
 	transform: scale(1.5);
 }
 
-pre.code, pre.cmd {
+pre.code,
+pre.cmd {
 	background-color: var(--wash);
 	border: 1px solid var(--accentuate);
 }
@@ -50,20 +74,6 @@ pre.code>code.json {
 	display: block;
 }
 
-body {
-	font-family: "Bree Serif", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	margin: 0 20px;
-}
-
-a {
-	color: var(--foreground);
-	text-decoration: none;
-}
-
-a:hover, a.hovering {
-	color: var(--punk);
-}
 
 .post-tags {
 	background-color: var(--wash);
@@ -103,18 +113,14 @@ textarea {
 	height: 10em;
 }
 
-input[type="text"], textarea, select {
+input[type="text"],
+textarea,
+select {
 	width: -webkit-fill-available;
 	width: -moz-available;
 	background-color: var(--accentuate);
 }
 
-table {
-	text-align: left;
-	table-layout: fixed;
-	width: 100%;
-	border-collapse: collapse;
-}
 
 table th,
 table td {
@@ -162,36 +168,6 @@ output {
 	content: "$ ";
 }
 
-nav.breadcrumb a:not(:last-child):after {
-	content: "↠";
-	padding: 0 0.5em;
-}
-
-article {
-	margin: 0 20px;
-	max-width: 48em;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-h1 {
-	margin: 1em 0 0 0;
-}
-
-h2,
-h3,
-h4,
-h5 {
-	margin-bottom: 0;
-	margin-top: 2em;
-}
-
-.post-content {
-	font-family: 'Merriweather', serif;
-	line-height: 1.5em;
-	-webkit-font-smoothing: antialiased;
-	text-align: justify;
-}
 
 .post-ads {
 	margin: 50px 0;
@@ -230,12 +206,7 @@ pre {
 	font-size: 2rem;
 }
 
-.header-title {
-	font-size: 2rem;
-	font-weight: bold;
-	margin-top: 32px;
-	font-family: "Bungee Shade", sans-serif;
-}
+
 
 .header-title a {
 	text-decoration: none;
@@ -253,12 +224,7 @@ pre {
 	margin: 0 5px;
 }
 
-.header-line {
-	width: 100%;
-	border-width: 2px;
-	border-color: #482936;
-	border-style: solid none none none;
-}
+
 
 .lang-switch {
 	font-weight: 600;
@@ -388,35 +354,4 @@ pre {
 	position: absolute;
 	bottom: 0;
 	background: white;
-}
-
-@media screen and (max-width: 600px) {
-
-	.header-title,
-	.header-subtitle,
-	.header-items {
-		text-align: center;
-	}
-
-	.posts-line {
-		font-size: 16px;
-	}
-
-	.markdown-body {
-		font-size: 16px;
-	}
-
-	.post-title {
-		font-size: 2rem;
-	}
-
-	.post-content p {
-		letter-spacing: 0.05em;
-	}
-}
-
-@media screen and (max-width: 48em) {
-	.posts-category {
-		display: none;
-	}
 }

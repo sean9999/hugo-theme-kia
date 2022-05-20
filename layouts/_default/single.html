@@ -71,11 +71,4 @@
 	</div>
 </article>
 
-{{ partial "scripts.html" . }}
-{{ if .Site.Params.extraBody }}
-{{ .Site.Params.extraBody | safeHTML }}
-{{ end }}
-
-{{ partial "svg.html" }}
-
 {{ end }}
