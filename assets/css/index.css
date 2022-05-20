@@ -40,8 +40,6 @@
 	transform: scale(1.5);
 }
 
-
-
 pre.code, pre.cmd {
 	background-color: var(--wash);
 	border: 1px solid var(--accentuate);

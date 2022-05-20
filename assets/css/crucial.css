@@ -1,0 +1,8 @@
+:root {
+	--punk: rgb(203, 3, 248);
+	--foreground: rgb(0,0,0);
+	--bg: white;
+	--wash: #c7e2ff;
+	--accentuate: rgba(0,0,0,0.1);
+	--radius: 5px;
+}
