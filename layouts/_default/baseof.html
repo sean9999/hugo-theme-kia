@@ -39,45 +39,37 @@
 	<meta property="og:image" content="{{ .Site.Params.favicon }}" />
 	{{ end }}
 	<link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-	
 	{{ $critical := resources.Get "css/crucial.css" | minify }}
-	<style nonce="muthereffer">{{ $critical.Content | safeCSS }}</style>
-
 	<!--	css 	-->
+	{{ $critical := resources.Get "css/crucial.css" | minify }}
+	<style>{{ $critical.Content | safeCSS }}</style>
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-	<link nonce="muthereffer" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" />
-	<link nonce="muthereffer" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&family=Bungee+Shade&display=swap" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&family=Bungee+Shade&display=swap" rel="stylesheet" />
 	{{ $styles := resources.Get "css/index.css" | minify }}
 	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen" />
 	<link rel="stylesheet" href="/fonts/fontawesome/css/all.css" />
-	{{ if .Site.Params.TwitterCards }}{{ template "_internal/twitter_cards.html" . }}{{ end }}
-	{{ .Site.Params.extraHead | safeHTML }}
-
-
 	<!--	external assets referenced in front matter  -->
 	{{ range .Params.assets.css -}}
-	<link nonce="muthereffer" rel="stylesheet" href="{{ . | absURL }}" />
+	<link rel="stylesheet" href="{{ . | absURL }}" />
 	{{- end }}
 	{{ range .Params.assets.js -}}
-	<script nonce="muthereffer" defer src="{{ . | absURL }}"></script>
+	<script defer src="{{ . | absURL }}"></script>
 	{{- end }}
-	<script id="dsq-count-scr" nonce="muthereffer" src="//fukt.disqus.com/count.js" defer async></script>
-	
+	<script id="dsq-count-scr" src="//fukt.disqus.com/count.js" defer async></script>
 	<!--	page bundle assets	-->
-	
 	{{ $stylesheets := .Resources.Match "*.css" }}
 	{{ range $stylesheets }}
-	<link nonce="muthereffer" rel="stylesheet" href="{{ .RelPermalink }}" />
+	<link rel="stylesheet" href="{{ .RelPermalink }}" />
 	{{ end }}
 	{{ with .Resources.GetMatch "*.js" }}
-	<script nonce="muthereffer" type="text/javascript" src="{{ .RelPermalink }}" async defer></script>
+	<script type="text/javascript" src="{{ .RelPermalink }}" async defer></script>
 	{{ end }}
-	<script type="module" nonce="muthereffer" src="/js/universal.mjs"></script>
+	<script type="module" src="/js/universal.mjs"></script>
 	{{ with .Resources.GetMatch "index.mjs" }}
-	<script nonce="muthereffer" type="module" src="{{ .RelPermalink }}"></script>
+	<script type="module" src="{{ .RelPermalink }}"></script>
 	{{ end }}
-	
 </head>
 
 <body>
