@@ -2,25 +2,42 @@
 	--punk: rgb(203, 3, 248);
 	--foreground: rgb(0, 0, 0);
 	--bg: white;
-	--wash: #c7e2ff;
-	--accentuate: rgba(0, 0, 0, 0.1);
+	--wash: #00617f59;
+	--forest: #0f6725;
+	--accentuate: rgba(0, 0, 0, 0.25);
 	--radius: 5px;
 }
 
-.post-content p,
-ul,
-ol {
-	font-family: Merryweather;
+time {
+	font-style: oblique;
+}
+
+.post-content p {
+	font-family: 'Merriweather', serif;
 	line-height: 1.5em;
 }
 
+ul li, ol li {
+	font-family: 'Merriweather', serif;
+	margin-bottom: 1em;
+}
+
+
 table {
 	width: 100%;
+	table-layout: auto;
+	border-collapse: collapse;	
 }
 
 nav.breadcrumb a:not(:last-child)::after {
 	content: "↠";
 	padding: 0 .5em;
+	display: inline-block;
+}
+
+
+nav a:hover {
+	text-decoration: underline;
 }
 
 h2,
@@ -36,8 +53,8 @@ h1 {
 }
 
 .post-date {
-	font-weight: 800;
-	font-style: italic;
+	font-style: oblique;
+	color: var(--accentuate);
 }
 
 .post-content>p:first-of-type::first-letter {
@@ -61,6 +78,7 @@ h1 {
 .site-footer-item a i:hover,
 i.hovering {
 	transform: scale(1.5);
+	color: var(--punk);
 }
 
 pre.code,
@@ -87,7 +105,7 @@ pre.code>code.json {
 	background-color: var(--punk);
 }
 
-.post-content a {
+.post-content a, nav a:hover {
 	text-decoration-color: var(--punk);
 	text-decoration-line: underline;
 	text-decoration-thickness: 2px;
@@ -99,14 +117,17 @@ pre.code>code.json {
 	text-decoration: none;
 }
 
-.note.warning {
+.note {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
+	margin: 2em 0 0 0;
+}
+
+.note.warning {
 	background-image: url(/images/stripe.svg);
 	background-size: 0.5rem auto;
 	background-repeat: repeat-y;
-	margin: 1em 0;
 }
 
 textarea {
@@ -133,24 +154,25 @@ table th {
 	background-color: var(--wash);
 }
 
-.note.warning>svg {
+.note>svg {
 	flex-grow: 0;
 	flex-shrink: 1;
 	flex-basis: 5em;
 	height: auto;
 	padding: 0 1em;
 	fill: yellow;
+	align-self: center;
 }
 
-.note.warning>p {
+.note>p {
 	flex-grow: 1;
 	flex-shrink: 1;
 	flex-basis: 12em;
 }
 
 .note .sign {
-	height: 2.25rem;
-	width: 2.25rem;
+	height: 4rem;
+	width: auto;
 }
 
 code,
@@ -158,6 +180,10 @@ kbd,
 pre,
 output {
 	font-family: 'Fira Code', monospace;
+}
+
+p > code, p > kbd {
+	font-weight: bold;
 }
 
 .cmd {
@@ -206,14 +232,70 @@ pre {
 	font-size: 2rem;
 }
 
-
-
 .header-title a {
 	text-decoration: none;
 }
 
+.notsuperimportant {
+	color: var(--accentuate);
+}
+
+#posts-list a:hover {
+	text-decoration-line: underline;
+	text-decoration-thickness: 2px;
+	text-decoration-color: var(--punk);
+}
+
+.header-title a:hover {
+	color: var(--punk);
+}
+
 .header-subtitle {
-	color: #666;
+	color: var(--accentuate);
+	font-style: oblique;
+}
+
+.fadetocolour {
+    filter: sepia(1);
+    animation-name: tocolour;
+    animation-fill-mode: forwards;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-delay: 10s;
+}
+
+body.home {
+	background-image: url("/img/wall4.jpg");
+	background-blend-mode: color-burn;
+	background-size: cover;
+}
+
+@keyframes tocolour {
+	0% {
+		filter: sepia(1);
+	}
+	100% {
+		filter: sepia(0);
+	}
+}
+
+.float.left {
+	float: left;
+	margin-right: 1em;
+}
+
+.float.right {
+	float: right;
+	margin-left: 1em;
+}
+
+.w25 {
+	width: 25%;
+}
+
+.w33 {
+	width: 33%;
 }
 
 .header-items {
@@ -265,7 +347,6 @@ pre {
 	max-width: 100%;
 	display: block;
 	margin-right: auto;
-	margin-top: 12px;
 }
 
 .post-header {
@@ -278,12 +359,13 @@ pre {
 }
 
 .post-tags {
-	display: inline;
+	display: inline-block;
 	font-weight: 600;
 	padding: 2px 5px;
-	margin-right: 6px;
-	border: #000 2px solid;
-	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--foreground);
+	border-radius: var(--radius);
 }
 
 .post-date {
@@ -304,7 +386,9 @@ pre {
 	margin-bottom: 50px;
 }
 
-
+.post-content p {
+	text-align: justify;
+}
 
 .related-content {
 	border-width: 3px;

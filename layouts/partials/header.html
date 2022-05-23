@@ -3,7 +3,7 @@
 	<div class="header-title">
 		<a href="{{ .Site.LanguagePrefix }}/">{{ or .Site.Params.headTitle .Site.Author.name }}</a>
 	</div>
-	<div class="header-subtitle">{{ .Site.Params.Description }}</div>
+	<div class="header-subtitle">[ {{ .Site.Params.Description }} ]</div>
 </header>
 <div class="row end-md center-xs header-items">
 	{{ range .Site.Params.socials }}
@@ -22,14 +22,15 @@
 <div class="header-line"></div>
 
 
+{{- if not .IsHome -}}
 <nav class="breadcrumb">
-	{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+	<a href="/">🏠</a>
+	{{ $rellink := "" }}
+	{{ range (split .RelPermalink "/") }}
+	  {{ if gt (len . ) 0 -}}
+		{{ $rellink = printf "%s/%s" $rellink . }}
+		<a href="{{ $rellink }}">{{ humanize . }}</a>
+	  {{ end }}
+	{{ end }}
 </nav>
-{{ define "breadcrumbnav" }}
-{{ if .p1.Parent }}
-	{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
-{{ else if not .p1.IsHome }}
-	{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
-{{ end }}
-<a href="{{ .p1.Permalink }}"{{ if eq .p1 .p2 }} class="active"{{ end }}>{{ .p1.Title }}</a>
-{{ end }}
+{{- end }}
