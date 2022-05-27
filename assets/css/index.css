@@ -4,6 +4,7 @@
 	--bg: white;
 	--wash: #00617f59;
 	--forest: #0f6725;
+	--hershey: brown;
 	--accentuate: rgba(0, 0, 0, 0.25);
 	--radius: 5px;
 }
@@ -21,7 +22,6 @@ ul li, ol li {
 	font-family: 'Merriweather', serif;
 	margin-bottom: 1em;
 }
-
 
 table {
 	width: 100%;
@@ -134,6 +134,9 @@ textarea {
 	height: 10em;
 }
 
+.ticks li { list-style-image: url(/img/icon-tick.svg); } 
+
+
 input[type="text"],
 textarea,
 select {
@@ -141,7 +144,6 @@ select {
 	width: -moz-available;
 	background-color: var(--accentuate);
 }
-
 
 table th,
 table td {
@@ -184,6 +186,7 @@ output {
 
 p > code, p > kbd {
 	font-weight: bold;
+	color: var(--hershey);
 }
 
 .cmd {

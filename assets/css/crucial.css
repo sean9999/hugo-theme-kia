@@ -190,10 +190,17 @@ pre {
     flex-shrink: 1
 }
 
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: "Bree Serif", sans-serif;
     -webkit-font-smoothing: antialiased;
-    margin: 0 20px
+    margin: 0;
+    padding: 1em;
+    width: inherit
 }
 
 code,
