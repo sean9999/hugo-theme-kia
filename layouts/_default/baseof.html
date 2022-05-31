@@ -3,15 +3,11 @@
 
 <head>
 	<meta charset="utf-8" />
-	{{ hugo.Generator }}
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="author" content="{{ .Site.Author.name }}" />
 	<meta property="og:url" content="{{ .Permalink }}" />
 	<link rel="canonical" href="{{ .Permalink }}" />
-	{{- if .Site.Params.staticPrefix -}}
-	<link rel="dns-prefetch" href="{{ .Site.Params.staticPrefix }}" />
-	{{- end -}}
 	{{- if .Site.Params.favicon -}}
 	<link rel="apple-touch-icon" href="{{ .Site.Params.favicon }}" />
 	<link rel="icon" href="{{ .Site.Params.favicon }}" />
@@ -38,18 +34,16 @@
 	{{- else -}}
 	<meta property="og:image" content="{{ .Site.Params.favicon }}" />
 	{{ end }}
-	<link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-	{{ $critical := resources.Get "css/crucial.css" | minify }}
-	
+	<link href="{{ .Site.Params.staticPrefix }}{{ "index.xml" | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />	
 	<!--	css 	-->
-	{{ $critical := resources.Get "css/crucial.css" | minify }}
-	<style>{{ $critical.Content | safeCSS }}</style>
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" />
 	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&family=Bungee+Shade&display=swap" />
+	{{ $structure := resources.Get "css/structure.scss" | resources.ToCSS | fingerprint }}
+	{{ $fing := $structure | resources.Fingerprint "sha512" }}
+	<link rel="stylesheet" href="{{ $structure.Permalink }}" integrity="{{ $fing.Data.Integrity  }}" media="screen" />
 	{{ $styles := resources.Get "css/index.css" | minify }}
-	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="{{ $styles.Permalink }}" media="screen" />
+	<link rel="preload" as="style" href="{{ $styles.Permalink }}" media="screen" />
 	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="/fonts/fontawesome/css/all.css" />
 	<!--	external assets referenced in front matter  -->
 	{{ range .Params.assets.css -}}
@@ -74,9 +68,9 @@
 </head>
 
 <body>
+	{{/* partial "header.html" . */}}
 	{{ block "main" . }}
-	<p>I am the main block, defined in layouts/_default/baseof.html</p>
-	{{ end }}
+	{{/* partial "footer.html" . */}}
 </body>
 
 </html>

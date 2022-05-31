@@ -1,0 +1,23 @@
+body {
+	display: flex;
+	flex-direction: column;
+	header, main, footer {
+		border: 3px dotted gray;
+		width: 40em;
+	}
+	header {
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 12em;
+	}
+	main {
+		flex-grow: 1;
+		flex-shrink: 1;
+		flex-basis: auto;
+	}
+	footer {
+		flex-grow: 0;
+		flex-shrink: 1;
+		flex-basis: 12em;		
+	}
+}
