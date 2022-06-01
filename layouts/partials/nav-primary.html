@@ -1,4 +1,4 @@
-<nav class="centered spaced">
+<nav class="centered spaced divided">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
     <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>

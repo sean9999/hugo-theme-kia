@@ -1,0 +1,35 @@
+.ticks li { list-style-image: url(/img/icon-tick.svg); } 
+
+.note {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 2em 0 0 0;
+}
+
+.note.warning {
+	background-image: url(/images/stripe.svg);
+	background-size: 0.5rem auto;
+	background-repeat: repeat-y;
+}
+
+.note>svg {
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: 5em;
+	height: auto;
+	padding: 0 1em;
+	fill: yellow;
+	align-self: center;
+}
+
+.note>p {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 12em;
+}
+
+.note .sign {
+	height: 4rem;
+	width: auto;
+}

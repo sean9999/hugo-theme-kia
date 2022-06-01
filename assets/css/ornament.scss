@@ -1,0 +1,27 @@
+:root {
+	--punk: rgb(203, 3, 248);
+	--foreground: rgb(0, 0, 0);
+	--background: white;
+	--wash: #00617f59;
+	--forest: #0f6725;
+	--hershey: brown;
+	--accentuate: rgba(0, 0, 0, 0.25);
+	--radius: 5px;
+}
+
+@import "./code.scss";
+@import "./anchors.scss";
+@import "./typo.scss";
+@import "./cupper.scss";
+@import "./tables.scss";
+@import "./forms.scss";
+
+hr {
+    color: var(--accentuate);
+}
+
+nav.breadcrumb a:not(:last-child)::after {
+	content: "↠";
+	padding: 0 .5em;
+	display: inline-block;
+}

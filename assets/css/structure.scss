@@ -1,23 +1,66 @@
+:root {
+	--document-width: 48em;
+}
+
+html {
+	box-sizing: border-box;
+	height: 100vh;
+}
 body {
+	height: inherit;
+	margin: 0 auto;
+	max-width: var(--document-width);
 	display: flex;
 	flex-direction: column;
-	header, main, footer {
-		border: 3px dotted gray;
-		width: 40em;
+	> header, > main, > footer {
+		margin: 0 0.33em;
 	}
-	header {
+	> header {
 		flex-grow: 0;
 		flex-shrink: 1;
 		flex-basis: 12em;
+		aside.socials {
+			text-align: right;
+		}
 	}
-	main {
+	> main {
 		flex-grow: 1;
 		flex-shrink: 1;
 		flex-basis: auto;
 	}
-	footer {
+	> footer {
 		flex-grow: 0;
 		flex-shrink: 1;
-		flex-basis: 12em;		
+		flex-basis: 12em;
+		aside.socials {
+			text-align: center;
+		}		
 	}
+}
+
+.centered {
+	text-align: center;
+}
+
+article footer .tags a {
+	float: right;
+	clear: right;
+}
+
+.float.left {
+	float: left;
+	margin-right: 1em;
+}
+
+.float.right {
+	float: right;
+	margin-left: 1em;
+}
+
+.w25 {
+	width: 25%;
+}
+
+.w33 {
+	width: 33%;
 }

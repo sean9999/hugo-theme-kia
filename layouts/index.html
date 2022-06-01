@@ -1,8 +1,7 @@
 {{ define "main" }}
 	<article class="posts">
-		<div class="row">
-			<div class="col-xs-12">
-				{{ partial "header.html" . }}
+		
+
 				<div id="posts-list">
 					{{ range $.Site.Home.Sections }}
 					<section>
@@ -24,8 +23,7 @@
 					</section>
 					{{ end }}
 				</div>
-				{{ partial "footer.html" . }}
-			</div>
-		</div>
+
+		
 	</article>
 {{ end }}

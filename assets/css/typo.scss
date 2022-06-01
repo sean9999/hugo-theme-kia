@@ -1,0 +1,52 @@
+body {
+    font-family: "Bree Serif", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+time {
+	font-style: oblique;
+    color: var(--accentuate);
+}
+
+main article {
+    p, ul li, ol li {
+        font-family: 'Merriweather', serif;
+    }
+    p {
+        text-rendering: optimizeLegibility;
+        text-align: justify;
+        line-height: 1.5em;
+    }
+    ul li, ol li {
+        margin-bottom: 1em;
+    }
+}
+
+.header-title {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Bungee Shade", sans-serif;
+    margin: 0.33em 0 0 0;
+}
+.header-subtitle {
+	color: var(--accentuate);
+	font-style: oblique;
+    font-size: smaller;
+    margin-top: 0;
+}
+.post-title {
+	font-size: 2rem;
+	font-weight: 600;
+}
+
+h2,
+h3,
+h4,
+h5 {
+	margin-bottom: 0;
+	margin-top: 2em;
+}
+
+h1 {
+	margin: 1em 0 0;
+}

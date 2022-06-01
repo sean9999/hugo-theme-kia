@@ -1,0 +1,11 @@
+textarea {
+	height: 10em;
+}
+
+input[type="text"],
+textarea,
+select {
+	width: -webkit-fill-available;
+	width: -moz-available;
+	background-color: var(--accentuate);
+}

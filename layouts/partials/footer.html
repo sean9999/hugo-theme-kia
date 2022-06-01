@@ -1,12 +1,12 @@
-<footer>
 
-<div class="site-footer">
-	{{ range .Site.Params.socials }}
-	<div class="site-footer-item">
-		<a href="{{ .link }}" target="_blank" title="{{ .name }}">{{ .icon | safeHTML }}</a>
-	</div>
-	{{ end }}
-</div>
+<hr />
+
+<aside class="socials">
+{{ range .Site.Params.socials }}
+	<a href="{{ .link }}" target="_blank" title="{{ .name }}">{{ .icon | safeHTML }}</a>
+{{ end }}
+</aside>
+
 
 <div class="site-footer">
 	<div class="site-footer-item">
@@ -22,7 +22,5 @@
 		</details>
 	</div>
 </div>
-
-</footer>
 
 {{ partial "svg.html" . }}

@@ -1,0 +1,56 @@
+a {
+    color: inherit;
+    text-decoration-color: var(--punk);
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+}
+
+.header-title a:hover {
+    color: var(--punk);
+    background-color: inherit;
+}
+
+a:hover {
+    background-color: var(--foreground);
+    color: var(--background);
+    text-decoration: none;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.socials a:hover {
+    color: var(--punk);
+    background-color: inherit;
+}
+
+.socials a {
+    display: inline-block;
+    margin-left: 0.25em;
+}
+
+.socials a i:hover {
+    transform: scale(1.61803398875);
+}
+
+.tags a:before {
+	content: "#";
+}
+
+.spaced > * {
+	padding: 0 0.25em;
+}
+.divided a:not(:last-child) {
+    border-right: 1px solid var(--foreground)
+}
+
+.tags a {
+    text-decoration: none;
+    font-style: oblique;
+    color: var(--punk);
+}
+
+.tags a:hover {
+    color: var(--background);
+}
