@@ -16,11 +16,16 @@
 		"headline" : "{{ .Title }}",
 		{{ if .IsHome -}}
 		"description" : "{{ .Site.Params.description | plainify }}",
-		"keywords" : {{ if isset .Site.Params "tags" }}{{ .Site.Params.tags }}{{ end }},
+		{{ if (gt (.Site.Params.tags | len) 0 ) }}
+		"keywords" : {{ .Site.Params.tags }},
+		{{ end }}		
 		{{- else -}}
 		"description" : "{{ default .Summary .Description | plainify }}",
-		"keywords" : {{ if isset .Params "tags" }}{{ .Params.tags }}{{ end }},
+		{{ if isset .Params "tags" }}
+		"keywords" : {{ .Params.tags }},
+		{{ end }}		
 		{{- end }}
+
 		"inLanguage" : "en-CA",
 		"author" : [{
 			"@type": "Person",
