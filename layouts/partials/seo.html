@@ -9,7 +9,9 @@
 		{{- else -}}
 		"@type" : "BlogPosting",
 		{{- end }}
+		{{ if .Section -}}
 		"articleSection" : "{{ .Section }}",
+		{{- end }}
 		"name" : "{{ .Title }}",
 		"headline" : "{{ .Title }}",
 		{{ if .IsHome -}}

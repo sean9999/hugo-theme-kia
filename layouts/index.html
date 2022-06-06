@@ -1,29 +1,21 @@
 {{ define "main" }}
-	<article class="posts">
-		
-
-				<div id="posts-list">
-					{{ range $.Site.Home.Sections }}
-					<section>
-						<h1 class="site-date-catalog">{{ .Title }}</h1>
-						{{ range .Pages }}
-						<div class="row posts-line">
-							<div class="posts-title col-xs-9 col-sm-12">
-								<div class="row">
-									<div class="col-xs-10 col-sm-10">
-										<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-									</div>
-									<div class="col-xs-2 col-sm-2 posts-categories notsuperimportant">
-										<time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
-									</div>
-								</div>
-							</div>
-						</div>
-						{{ end }}
-					</section>
-					{{ end }}
-				</div>
-
-		
-	</article>
+<article class="summaries">
+	{{ range $.Site.Home.Sections }}
+	<div class="summary">
+		<h2>{{ .Title }}</h2>
+		{{ range .Pages }}
+			<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+			<p>{{ .Summary }}</p>
+			<time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
+		{{ end }}
+	</div>
+	{{ end }}
+	<div class="summary">
+		<h3><a href="/tags/">Tags</a></h3>
+		<p>View a graph of tags and posts</p>
+	</div>
+	<div class="summary">
+		<h3><a href="/about/">About me</a></h3>
+	</div>
+</article>
 {{ end }}

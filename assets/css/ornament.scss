@@ -2,9 +2,9 @@
 	--punk: rgb(203, 3, 248);
 	--foreground: rgb(0, 0, 0);
 	--background: white;
-	--wash: #00617f59;
+	--wash: #c5e3ec;
 	--forest: #0f6725;
-	--hershey: brown;
+	--hershey: #ae0808;
 	--accentuate: rgba(0, 0, 0, 0.25);
 	--radius: 5px;
 }
@@ -24,4 +24,37 @@ nav.breadcrumb a:not(:last-child)::after {
 	content: "↠";
 	padding: 0 .5em;
 	display: inline-block;
+	background-color: var(--background);
+	color: var(--foreground);
+}
+
+.summaries .summary {
+	h1, h2, h3, p {
+		margin: 0;
+	}
+	margin-bottom: 2em;
+}
+
+p.summary {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.fadetocolour {
+	filter: sepia(1);
+	animation-name: tocolour;
+	animation-fill-mode: forwards;
+	animation-duration: 30s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-delay: 10s;
+}
+
+@keyframes tocolour {
+	0% {
+		filter: sepia(1);
+	}
+	100% {
+		filter: sepia(0);
+	}
 }
