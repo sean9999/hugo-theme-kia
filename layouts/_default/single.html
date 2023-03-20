@@ -27,7 +27,7 @@
 		</div>
 
 		{{ if in .Site.Params.mainSections .Type }}
-		<section class="comments">{{ partial "disqus.html" . }}</section>
+		<section class="comments" hidden data-because="i don't want disqus anymore"></section>
 		{{ end }}
 
 	</footer>

@@ -51,7 +51,6 @@
 	{{ range .Params.assets.js -}}
 	<script defer src="{{ . | absURL }}"></script>
 	{{- end }}
-	<script id="dsq-count-scr" src="//fukt.disqus.com/count.js" defer async></script>
 	<!--	page bundle assets	-->
 	{{ $stylesheets := .Resources.Match "*.css" }}
 	{{ range $stylesheets }}
