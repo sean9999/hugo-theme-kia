@@ -1,15 +1,26 @@
-pre.code {
+pre {
+	padding: 1em;
 	background-color: var(--wash);
-	border: 1px solid var(--accentuate)
+	border-radius: var(--radius);
+	border-color: var(--accentuate);
+	border-width: 1px;
+	border-style: solid;
+	overflow-x: auto;
 }
 
-pre.code>code.json {
+
+pre.code {
+	background-color: var(--wash);
+	border-width: 1px;
+	border-color: var(--accentuate);
+}
+
+pre.code > code.json {
 	padding-bottom: 1em;
 	display: block
 }
 
-p>code,
-li>code {
+p>code, li>code {
 	color: var(--hershey);
 }
 
@@ -19,17 +30,17 @@ pre {
 	font-family: 'Fira Code', monospace
 }
 
-pre {
-	padding: 1em;
-	background-color: var(--wash);
-	border-radius: var(--radius);
-	border-width: 1px;
-	overflow-x: auto
-}
+
 
 .cmd > code:before {
 	content: "$ ";
 }
+
+/*
+.cmd {
+	border: 1px solid var(--wash);
+}
+*/
 
 /*
  * great idea, but I hate the effect

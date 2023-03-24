@@ -15,6 +15,7 @@
 @import "./cupper.scss";
 @import "./tables.scss";
 @import "./forms.scss";
+@import "./uncurated.scss";
 
 hr {
     color: var(--accentuate);
@@ -61,4 +62,25 @@ p.summary {
 
 .subtleborder {
 	border: 1px solid #00000022;
+}
+
+.post-date {
+	font-style: oblique;
+	color: var(--accentuate);
+}
+
+.post-content>p:first-of-type::first-letter {
+	font-size: 6.5rem;
+	line-height: 5rem;
+	float: left;
+	font-family: bungee shade, sans-serif;
+	padding: 0.25rem 0.5rem 0 0;
+}
+
+.centered.spaced a {
+	padding: 0 0.5em;
+}
+
+.centered.spaced a:not(:last-child) {
+	border-right: 1px solid var(--foreground);
 }
