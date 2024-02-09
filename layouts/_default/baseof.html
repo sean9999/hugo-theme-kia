@@ -26,7 +26,6 @@
 	<meta property="og:description" content="{{ .Site.Params.description }}" />
 	<meta name="description" content="{{ .Site.Params.description }}" />
 	{{- else -}}
-	<title>{{ .Title }}</title>
 	<meta property="og:title" content="{{ .Title }}" />
 	<meta property="og:type" content="article" />
 	<meta property="og:description" content="{{ default .Summary .Description | plainify }}" />
@@ -48,16 +47,14 @@
 	{{ range .Params.assets.css -}}
 	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="{{ . | absURL }}" />
 	{{- end }}
-	{{- if .Params.ga -}}
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Params.ga }}"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.ga }}"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-		gtag('config', '{{ .Params.ga }}');
+		gtag('config', '{{ .Site.Params.ga }}');
 	</script>
-	{{ end }}
 	{{ range .Params.assets.js -}}
 	<script defer src="{{ . | absURL }}"></script>
 	{{- end }}
