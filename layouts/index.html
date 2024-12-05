@@ -4,9 +4,9 @@
 	<div class="summary">
 		<h2>{{ .Title }}</h2>
 		{{ range .Pages }}
-			<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-			<p>{{ .Summary }}</p>
-			<time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
+		<h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+		<p>{{ .Summary }}</p>
+		<time datetime="{{ .Date.Format " 2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02, 2006"}}</time>
 		{{ end }}
 	</div>
 	{{ end }}
