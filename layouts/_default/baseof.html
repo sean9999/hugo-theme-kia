@@ -40,10 +40,12 @@
 	{{ end }}
 	<link rel="preconnect" href="https://fonts.gstatic.com" />
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&family=Bungee+Shade&display=swap" />
+	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style"
+		href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&family=Bungee+Shade&display=swap" />
 	{{ $bundle := resources.Get "css/bundle.scss" | resources.ToCSS | minify }}
-	<style >{{ $bundle.Content | safeCSS }}</style>
-	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="/fonts/fontawesome/css/all.css" />
+	<style>{{$bundle.Content | safeCSS}}</style>
+	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style"
+		href="/fonts/fontawesome/css/all.css" />
 	<!--	external assets referenced in front matter  -->
 	{{ range .Params.assets.css -}}
 	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style" href="{{ . | absURL }}" />
@@ -63,6 +65,9 @@
 	{{ with .Resources.GetMatch "index.mjs" }}
 	<script type="module" src="{{ .RelPermalink }}"></script>
 	{{ end }}
+	<!--
+		<script src="https://unpkg.com/@antonz/codapi@0.19.0/dist/snippet.js"></script>
+	-->
 </head>
 
 <body>
