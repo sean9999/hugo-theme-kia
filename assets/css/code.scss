@@ -10,7 +10,7 @@ pre {
 
 
 pre.code {
-	background-color: var(--wash);
+	background-color: #00b7ffad;
 	border-width: 1px;
 	border-color: var(--accentuate);
 }
@@ -29,7 +29,6 @@ pre {
 	tab-size: 2;
 	font-family: 'Fira Code', monospace
 }
-
 
 
 .cmd > code:before {
