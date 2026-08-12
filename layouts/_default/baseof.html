@@ -6,7 +6,7 @@
 	{{ hugo.Generator }}
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="author" content="{{ .Site.Author.name }}" />
+	<meta name="author" content="{{ .Site.Params.author.name }}" />
 	<meta property="og:url" content="{{ .Permalink }}" />
 	<link rel="canonical" href="{{ .Permalink }}" />
 	{{- if .Site.Params.staticPrefix -}}
@@ -32,7 +32,7 @@
 	<meta property="og:description" content="{{ default .Summary .Description | plainify }}" />
 	<meta name="description" content="{{ default .Summary .Description | plainify }}" />
 	{{- end }}
-	<meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+	<meta property="og:locale" content="{{ .Site.Language.Locale }}" />
 	{{- if .Params.album -}}
 	<meta property="og:image" content="{{ .Params.album }}" />
 	{{- else -}}
@@ -42,7 +42,7 @@
 	<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style"
 		href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Fira+Code&family=Merriweather&family=Bungee+Shade&display=swap" />
-	{{ $bundle := resources.Get "css/bundle.scss" | resources.ToCSS | minify }}
+	{{ $bundle := resources.Get "css/bundle.scss" | css.Sass | minify }}
 	<style>{{$bundle.Content | safeCSS}}</style>
 	<link onload="this.onload=null;this.rel='stylesheet'" rel="preload" as="style"
 		href="/fonts/fontawesome/css/all.css" />
